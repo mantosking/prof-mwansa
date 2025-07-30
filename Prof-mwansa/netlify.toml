@@ -1,0 +1,13 @@
+[build]
+  functions = "functions"
+
+[[redirects]]
+  from = "/dashboard/*"
+  to = "/dashboard.html"
+  status = 200
+  conditions = {Role = ["professeur"]}
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tableau de bord – Prof. Dr MWANSA Estimé</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Bonjour Prof. Dr MWANSA Estimé</h1>
+    <button id="logout">Déconnexion</button>
+  </header>
+
+  <section id="upload">
+    <h2>Publier un cours</h2>
+    <form name="cours" method="POST" data-netlify="true" enctype="multipart/form-data">
+      <input type="hidden" name="prof" value="Prof. Dr MWANSA Estimé">
+      <label>Titre
+        <input type="text" name="titre" required>
+      </label>
+      <label>Fichier PDF
+        <input type="file" name="pdf" accept="application/pdf" required>
+      </label>
+      <button type="submit">Publier</button>
+    </form>
+  </section>
+
+  <section id="stats">
+    <h2>Statistiques des étudiants</h2>
+    <canvas id="progressChart" width="600" height="300"></canvas>
+  </section>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/upload.js"></script>
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>
