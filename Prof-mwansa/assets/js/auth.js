@@ -1,13 +1,13 @@
-/* Gère login/logout via Netlify Identity */
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on('login', () => {
-    if (location.pathname === '/') location.replace('/dashboard');
+    if (location.pathname.endsWith('/') || location.pathname.endsWith('/index.html')) {
+      location.replace('/dashboard.html');
+    }
   });
-  window.netlifyIdentity.on('logout', () => location.replace('/'));
+  window.netlifyIdentity.on('logout', () => location.replace('/index.html'));
 }
 
-/* Bouton déconnexion manuelle */
 const logoutBtn = document.getElementById('logout');
 if (logoutBtn) {
-  logoutBtn.addEventListener('click', () => window.netlifyIdentity.logout());
+  logoutBtn.addEventListener('click', () => window.netlifyIdentity?.logout());
 }

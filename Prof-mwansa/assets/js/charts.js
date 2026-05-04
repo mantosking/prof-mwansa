@@ -1,4 +1,3 @@
-/* Graphique fictif – remplacé par données réelles via /getStats */
 fetch('/.netlify/functions/getStats')
   .then(r => r.json())
   .then(drawChart)
@@ -6,14 +5,15 @@ fetch('/.netlify/functions/getStats')
 
 function drawChart(data) {
   const ctx = document.getElementById('progressChart');
+  if (!ctx) return;
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: data.map(d => d.title),
       datasets: [{
-        label: 'Étudiants ayant terminé (%)',
+        label: 'Nombre de lectures',
         data: data.map(d => d.completed),
-        backgroundColor: '#005bbb'
+        backgroundColor: '#6b21a8'
       }]
     },
     options: { responsive: true, maintainAspectRatio: false }
@@ -22,8 +22,8 @@ function drawChart(data) {
 
 function fakeData() {
   return [
-    { title: 'Introduction à l’algo', completed: 78 },
-    { title: 'Structures de données', completed: 65 },
-    { title: 'POO en Python', completed: 92 }
+    { title: 'Nuit à Kin', completed: 120 },
+    { title: 'Afro Sunset', completed: 89 },
+    { title: 'Rumba Nova', completed: 176 }
   ];
 }
