@@ -1,7 +1,6 @@
-/* Feedback après soumission Netlify Forms */
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.forms.cours;
+  const form = document.forms.morceaux;
   form?.addEventListener('submit', () => {
-    alert('Cours envoyé ! Les étudiants seront notifiés.');
+    alert('Morceau envoyé sur MANTOS MUSIQUE ✅');
   });
 });

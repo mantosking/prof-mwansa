@@ -2,32 +2,41 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8"/>
-  <title>Tableau de bord – Prof. Dr MWANSA Estimé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard – MANTOS MUSIQUE</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
-    <h1>Bonjour Prof. Dr MWANSA Estimé</h1>
+    <h1>MANTOS MUSIQUE</h1>
     <button id="logout">Déconnexion</button>
   </header>
 
   <section id="upload">
-    <h2>Publier un cours</h2>
-    <form name="cours" method="POST" data-netlify="true" enctype="multipart/form-data">
-      <input type="hidden" name="prof" value="Prof. Dr MWANSA Estimé">
-      <label>Titre
-        <input type="text" name="titre" required>
+    <h2>Ajouter un morceau</h2>
+    <form name="morceaux" method="POST" data-netlify="true" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="morceaux">
+      <label>Titre du morceau
+        <input type="text" name="titre" placeholder="Ex. Nuit à Kin" required>
       </label>
-      <label>Fichier PDF
-        <input type="file" name="pdf" accept="application/pdf" required>
+      <label>Artiste
+        <input type="text" name="artiste" placeholder="Ex. Mantos" required>
       </label>
-      <button type="submit">Publier</button>
+      <label>Fichier audio (MP3/WAV)
+        <input type="file" name="audio" accept="audio/*" required>
+      </label>
+      <button type="submit">Stocker la musique</button>
     </form>
   </section>
 
+  <section>
+    <h2>Lecteur rapide</h2>
+    <audio controls class="player" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  </section>
+
   <section id="stats">
-    <h2>Statistiques des étudiants</h2>
+    <h2>Statistiques de la bibliothèque</h2>
     <canvas id="progressChart" width="600" height="300"></canvas>
   </section>
 
